@@ -75,8 +75,9 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 
-const cardGallary = images.map(({preview, original, description}) => {
-  return `
+const cardGallary = images
+  .map(({ preview, original, description }) => {
+    return `
     <li class="gallery-item">
 	<a class="gallery-link" href="${original}">
 		<img 
@@ -86,7 +87,8 @@ const cardGallary = images.map(({preview, original, description}) => {
 			/>
 	</a>
     </li>`;
-}).join('');
+  })
+  .join('');
 
-gallery.insertAdjacentHTML('afterbegin', cardGallary)
-
+gallery.insertAdjacentHTML('afterbegin', cardGallary);
+lightbox.refresh();

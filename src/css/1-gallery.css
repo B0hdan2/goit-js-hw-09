@@ -1,12 +1,12 @@
-
-.gallery{
+.gallery {
     display: flex;
     flex-wrap: wrap;
+
     max-width: 1158px;
-    margin-left: auto;
-    margin-right: auto;
     padding-top: 24px;
     padding-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
     gap: 24px;
@@ -15,7 +15,16 @@
 .gallery-item {
     max-width: 360px;
 }
+
 /* .gallery-link {
 } */
 /* .gallery-image {
 } */
+
+/* стелі для alt для кращого вигляду */
+div.sl-wrapper .sl-image .sl-caption{
+    font-size: 20px;
+    letter-spacing: 0.10em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .5);
+}
