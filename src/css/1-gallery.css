@@ -1,3 +1,21 @@
-body{
-    background-color: aqua;
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1158px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 24px;
 }
+
+.gallery-item {
+    max-width: 360px;
+}
+/* .gallery-link {
+} */
+/* .gallery-image {
+} */
