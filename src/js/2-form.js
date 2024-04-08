@@ -23,13 +23,13 @@ function fillsFields() {
 fillsFields();
 
 function recordsData(event) {
-  const { email, message } = event.currentTarget.elements;
+  const formData = {};
 
-  const objUserInfo = {
-    email: email.value.trim(),
-    message: message.value.trim(),
-  };
-  addDataToLocalStorage('feedback-form-state', objUserInfo);
+  formEl.querySelectorAll('input, textarea').forEach(input => {
+    formData[input.name] = input.value.trim();
+  });
+
+  addDataToLocalStorage('feedback-form-state', formData);
 }
 
 function clearsFormData(event) {
