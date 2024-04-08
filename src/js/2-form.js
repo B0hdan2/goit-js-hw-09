@@ -9,16 +9,14 @@ formEl.addEventListener('input', recordsData);
 formEl.addEventListener('submit', clearsFormData);
 
 function fillsFields() {
-  if (getDataLocalStorage('feedback-form-state') === undefined) return;
+  const formData = getDataLocalStorage('feedback-form-state');
+  if (formData === undefined) return;
 
-  const objUserInfo = getDataLocalStorage('feedback-form-state');
-
-  const keys = Object.keys(objUserInfo);
+  const keys = Object.keys(formData);
 
   for (const key of keys) {
-    formEl.elements[key].value = objUserInfo[key];
+    formEl.elements[key].value = formData[key];
   }
-  console.log(objUserInfo);
 }
 fillsFields();
 
@@ -34,6 +32,18 @@ function recordsData(event) {
 
 function clearsFormData(event) {
   event.preventDefault();
+
+  let formValid = true;
+
+  formEl.querySelectorAll('input, textarea').forEach(input => {
+    if (input.value.trim() === '') {
+      formValid = false;
+      alert(`Будь ласка, заповніть поле: ${input.name}`);
+    }
+  });
+
+  if (!formValid) return;
+
   removeDataLocalStorage('feedback-form-state');
   formEl.reset();
 }
